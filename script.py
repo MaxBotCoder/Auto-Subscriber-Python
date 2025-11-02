@@ -1,15 +1,21 @@
+#modules
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import time
 
-number_of_bot_loops = int(input("Enter the number of subscribers you want: "))
-print(f"You will now recieve {number_of_bot_loops} subscribers")
+#vaiables
+driver = webdriver.Chrome()
+loop = input("How many subscribers do you want? >>")
+number_of_revisions = 0
+first_name = "monica"
+last_name = "geller"
 
-#driver = webdriver.Chrome()
-
-for subscriber_loop in range(number_of_bot_loops):
-    driver = webdriver.Chrome()
-    driver.get("https://youtube.com")
-    print(f"{driver.title} has been opened!")
-    driver.quit()
+#functions
+def create_account():
+    driver.get()
     
-print("Process completed!")
+def login():
+    print("test!")
+
+#call functions
+create_account()

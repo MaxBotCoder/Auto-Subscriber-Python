@@ -15,6 +15,11 @@ last_name = "Alison"
 def subscribe_function():
     print("filler")
 
+def get_email():
+    if bool(driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div/div/input")) is true:
+        print("!button detected!")
+        driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div/div/input").click
+
 def account_creation_function():
     driver.get(google_login_url)
     time.sleep(1)
@@ -24,6 +29,17 @@ def account_creation_function():
     driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div/div[1]/div[2]/div/div[1]/div/div[1]/input").send_keys(last_name)
     driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[3]/div/div/div/div/button").click()
     time.sleep(2.5)
+    driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div[1]/div/div[1]/div[1]/div/div[1]/input").send_keys("1")
+    driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div[1]/div").click()
+    driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div[2]/ul/li[1]").click()
+    driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div[3]/div/div[1]/div[1]/div/div[1]/input").send_keys("2000")
+    driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[2]/div[1]/div[1]/div/div[1]/div").click()
+    driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[2]/div[1]/div[1]/div/div[2]/ul/li[2]").click()
+    driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[3]/div/div/div/div/button").click()
+    time.sleep(2.5)
+    driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[2]/button").click()
+    time.sleep(2.5)
+    get_email()
     
 def call_function_function(repeats):
     for subscribe in range(repeats):

@@ -16,9 +16,11 @@ def subscribe_function():
     print("filler")
 
 def get_email():
-    if bool(driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div/div/input")) is true:
+    if driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div/div/input"):
         print("!button detected!")
-        driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div/div/input").click
+        driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[2]/div/div/div/form/span/section/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div/div/input").click()
+        print("clciked!")
+        driver.find_element(by=By.XPATH, value="/html/body/div[2]/div[1]/div[1]/div[2]/c-wiz/main/div[3]/div/div[1]/div/div/button").click()
 
 def account_creation_function():
     driver.get(google_login_url)
